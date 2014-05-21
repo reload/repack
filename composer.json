@@ -1,0 +1,26 @@
+{
+    "name": "reload/repack",
+    "description": "Generate static Composer repositories",
+	"keywords": ["composer", "package", "repository", "generator"],
+	"type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kasper Garnaes",
+            "email": "kasper.garnaes@gmail.com"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"Reload\\Repack\\": "src/",
+			"Reload\\Repack\\Test\\": "test/"
+		}
+	},
+    "require": {
+        "composer/composer": "1.0.*@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mikey179/vfsStream": "~1.2"
+    }
+}
