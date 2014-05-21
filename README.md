@@ -1,5 +1,7 @@
 # Repack - static Composer repository generator
 
+[![Build Status](https://travis-ci.org/reload/repack.svg?branch=master)](https://travis-ci.org/reload/repack)
+
 Repack is a small library for repackaging a source of PHP-related packages as a Composer repository. The library generates static [Composer repositories](https://getcomposer.org/doc/05-repositories.md) - `packages.json` files and any other files needed.
 
 The goals of the project are to:
