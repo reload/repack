@@ -36,9 +36,8 @@ class ProviderPacker extends Packer
         $partitions = $this->partition($this->source->getEntries());
         foreach ($partitions as $partition => $entries) {
             $providers = array();
-            foreach ($entries as $entry) {
+            foreach ($this->source->getPackages($entries) as $package) {
                 // Generate package file.
-                $package = $this->source->getPackage($entry);
                 $packages = array('packages' => array($this->dumper->dump($package)));
                 $hash = hash('sha256', JsonFile::encode($packages));
 

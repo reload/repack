@@ -22,8 +22,7 @@ class SimplePacker extends Packer
     {
         // Get all packages. There is no need to partition them here.
         $packages = array();
-        foreach ($this->source->getEntries() as $source) {
-            $package = $this->source->getPackage($source);
+        foreach ($this->source->getPackages($this->source->getEntries()) as $package) {
             if (!isset($packages[$package->getName()])) {
                 $packages[$package->getName()] = array();
             }

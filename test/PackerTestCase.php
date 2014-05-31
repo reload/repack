@@ -90,11 +90,13 @@ class PackerTestCase extends PHPUnit_Framework_TestCase
             );
         // The source returns the package which matches the entry based on keys.
         $source->expects($this->any())
-            ->method('getPackage')
+            ->method('getPackages')
             ->will(
                 $this->returnCallback(
-                    function ($source) use ($packages) {
-                        return $packages[$source];
+                    function ($entries) use ($packages) {
+                        // We get the entries as array values. To use array_intersect_key to filter we need the entries
+                        // as keys as well. array_flip to the rescue.
+                        return array_intersect_key($packages, array_flip($entries));
                     }
                 )
             );

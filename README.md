@@ -29,7 +29,7 @@ If the number of packages in the source grows beyond what is recommendable for a
 The `Reload\Repack\Source\Source` subclass is responsible for a lot of the heavy lifting in the generation process. It must implement at least two methods:
 
 * `getEntries()`: This method is responsible for retrieving a list of entries which are to be converted to a Composer package. The data type of an entry is up to the subclass. The `Packer` does not call it directly. It could the response from an API listing call or a list of ids from a database table. 
-* `getPackage($entry)`: This method is responsible for converting a single entry to a corresponding `\Composer\Package\Package` object.
+* `getPackages($entries)`: This method is responsible for converting a group of entries to an array of corresponding `\Composer\Package\Package` objects.
 
 The source may choose to implement one more method:
 

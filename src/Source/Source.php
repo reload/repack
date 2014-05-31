@@ -30,14 +30,14 @@ abstract class Source
     abstract public function getEntries();
 
     /**
-     * Get a Composer package for an entry.
+     * Get Composer packages for a group of entries.
      *
-     * The data type of the entry will be the same as the entries returned by the getEntries() implementation.
+     * The data type of an entry will be the same as the entries returned by the getEntries() implementation.
      *
-     * @param $entry mixed The entry to convert.
-     * @return Package A Composer package representing the entry.
+     * @param $entries array The entries to convert.
+     * @return Package[] Composer package representing the entries
      */
-    abstract public function getPackage($entry);
+    abstract public function getPackages($entries);
 
     /**
      * Return a partition name for an entry. This is used by Packers which split packages into smaller groups.

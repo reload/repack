@@ -31,8 +31,7 @@ class IncludesPacker extends Packer
         foreach ($partitions as $partition => $entries) {
             // Retrieve the packages for each partition.
             $packages = array();
-            foreach ($entries as $entry) {
-                $package = $this->source->getPackage($entry);
+            foreach ($this->source->getPackages($entries) as $package) {
                 if (!isset($packages[$package->getName()])) {
                     $packages[$package->getName()] = array();
                 }
